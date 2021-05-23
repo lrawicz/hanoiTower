@@ -15,13 +15,14 @@ totalMoves = 0
 subset =(_set) => _set.filter(_item=>{return _item!= _set[0] })
 
 function MoveFirst(_from,_to){
-		
-		console.log("from:", _from.name, "to:", _to.name, _from.arr[_from.arr.length-1])
-	
-
+		console.log("---")
+		console.log("Move from", _from.name, "to:", _to.name, "pieze:", _from.arr[_from.arr.length-1])
+		totalMoves++;
 		if (_to.arr.length==0 || _from.arr[_from.arr.length-1]<_to.arr[_to.arr.length-1]){
 			_to.arr.push(_from.arr.pop())
-			
+			console.log("tower1", tower1.arr)
+			console.log("tower2", tower2.arr)
+			console.log("tower3", tower3.arr)
 		}else{
 			console.log( "error")
 			throw "error"
@@ -51,9 +52,13 @@ function moveSet(discs=tower1.arr,_origin=tower1,  _middle= tower2 , _target = t
 }
 
 //test()
+console.log("////START////")
+console.log("tower1", tower1.arr)
+console.log("tower2", tower2.arr)
+console.log("tower3", tower3.arr)
 moveSet()
-console.log("////FIN////")
-console.log(tower1)
-console.log(tower2)
-console.log(tower3)
-console.log(totalMoves)
+console.log("////END////")
+console.log("tower1", tower1.arr)
+console.log("tower2", tower2.arr)
+console.log("tower3", tower3.arr)
+console.log("totalMoves:",totalMoves)
